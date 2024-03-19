@@ -33,14 +33,15 @@
     </dialog>
     <VueFlow
       v-model="elements"
-      class="basicflow"
+      class="custom-node-flow"
       :default-edge-options="{ type: 'smoothstep' }"
       :default-viewport="{ zoom: 1.5 }"
-      :min-zoom="0.2"
+      :min-zoom="0.5"
       :max-zoom="4"
       fit-view-on-init
     >
       <Background pattern-color="#ccc" gap="8" />
+      <template #node-custom="props">hi</template>
       <MiniMap />
     </VueFlow>
   </main>
