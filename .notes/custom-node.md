@@ -2,9 +2,9 @@
 import { ref, toRef } from 'vue'
 import { MiniMap } from '@vue-flow/minimap'
 import { Position, VueFlow } from '@vue-flow/core'
+import { presets } from './presets.js'
 import ColorSelectorNode from './ColorSelectorNode.vue'
 import OutputNode from './OutputNode.vue'
-import { presets } from './presets.js'
 
 const nodes = ref([
   {

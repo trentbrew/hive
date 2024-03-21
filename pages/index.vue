@@ -1,15 +1,18 @@
 <script setup>
-  import { VueFlow, useVueFlow } from '@vue-flow/core'
-  import { Background } from '@vue-flow/background'
-  import { Controls } from '@vue-flow/controls'
-  import { MiniMap } from '@vue-flow/minimap'
+  import { VueFlow, useVueFlow, Handle, Position } from '@vue-flow/core'
   import { initialElements } from './initial-elements.js'
+  import { Background } from '@vue-flow/background'
+  import { MiniMap } from '@vue-flow/minimap'
+  import { Controls } from '@vue-flow/controls'
+  import { NodeResizer } from '@vue-flow/node-resizer'
+
+  import '@vue-flow/node-resizer/dist/style.css'
 
   const { onConnect, addEdges } = useVueFlow()
-
   const elements = ref(initialElements)
 
   onConnect(params => addEdges(params))
+  defineProps(['label'])
 </script>
 
 <template>
@@ -33,15 +36,17 @@
     </dialog>
     <VueFlow
       v-model="elements"
+      fit-view-on-init
       class="custom-node-flow"
       :default-edge-options="{ type: 'smoothstep' }"
       :default-viewport="{ zoom: 1.5 }"
-      :min-zoom="0.5"
+      :min-zoom="0.4"
       :max-zoom="4"
-      fit-view-on-init
     >
       <Background pattern-color="#ccc" gap="8" />
-      <template #node-custom="props">hi</template>
+      <template #node-resizable="resizableNodeProps">
+        <ResizableNode :label="resizableNodeProps.label" />
+      </template>
       <MiniMap />
     </VueFlow>
   </main>

@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 @import 'https://cdn.jsdelivr.net/npm/@vue-flow/core@1.28.0/dist/style.css';
 @import 'https://cdn.jsdelivr.net/npm/@vue-flow/core@1.28.0/dist/theme-default.css';
 @import 'https://cdn.jsdelivr.net/npm/@vue-flow/controls@latest/dist/style.css';
 @import 'https://cdn.jsdelivr.net/npm/@vue-flow/minimap@latest/dist/style.css';
 @import 'https://cdn.jsdelivr.net/npm/@vue-flow/node-resizer@latest/dist/style.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 html,
 body,
@@ -15,7 +16,6 @@ body,
 
 #app {
   text-transform: uppercase;
-  /* font-family: 'JetBrains Mono', monospace; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -27,18 +27,7 @@ body,
   transform-origin: bottom right;
 }
 
-/* ------------ custom ------------ */
-
-.fullscreen {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-}
+/* ------------ effects ------------ */
 
 .ease-circ {
   transition-timing-function: cubic-bezier(0.85, 0, 0.15, 1);
@@ -58,6 +47,22 @@ body,
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fullscreen {
+  @apply absolute top-0 left-0 h-screen w-screen p-0 m-0;
+}
+
+.center {
+  @apply flex justify-center items-center;
+}
+
+.horizontal {
+  @apply flex justify-between items-center;
+}
+
+.vertical {
+  @apply flex flex-col justify-between items-center;
+}
 
 /* ------------ global ------------ */
 
