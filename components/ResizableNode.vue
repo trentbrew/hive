@@ -9,12 +9,12 @@
   const limits = computed(() => {
     return {
       min: {
-        width: dims.value.width / 2,
-        height: dims.value.height / 2,
+        width: dims.value.width / 4,
+        height: dims.value.height / 4,
       },
       max: {
-        width: dims.value.width * 2,
-        height: dims.value.height * 2,
+        width: dims.value.width * 1.5,
+        height: dims.value.height * 1.5,
       },
     }
   })

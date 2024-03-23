@@ -11,8 +11,7 @@ export const initialElements = [
   },
   {
     id: '2',
-    type: 'resizable',
-    label: 'Node 2 (resizable)',
+    label: 'Node 2 (not resizable)',
     position: { x: 250, y: 0 },
     targetPosition: Position.Left,
     style: { background: '#fff', border: '2px solid black' },
